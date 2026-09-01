@@ -1,7 +1,11 @@
 import { renderComments } from "./renderComments.js";
 import { setAddFormListener } from "./setAddFormListener.js";
+import { loadComments } from "./api.js";
 
-renderComments();
-setAddFormListener();
+async function initApp() {
+  await loadComments();
+  renderComments();
+  setAddFormListener();
+}
 
-console.log("It works!");
+initApp();
