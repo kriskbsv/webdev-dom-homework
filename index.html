@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Проект "Комменты"</title>
@@ -8,6 +8,9 @@
   <body>
     <div class="container">
       <ul class="comments"></ul>
+      <div class="comments-loader" style="display: none;">
+        Комментарии загружаются...
+      </div>
 
       <div class="add-form">
         <input
@@ -25,9 +28,11 @@
           <button class="add-form-button">Написать</button>
         </div>
       </div>
+      <div class="add-form-loader" style="display: none;">
+        Комментарий добавляется...
+      </div>
     </div>
 
     <script type="module" src="./scripts/main.js"></script>
   </body>
-</html>
 </html>
