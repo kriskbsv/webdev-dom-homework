@@ -1,7 +1,7 @@
 import { comments } from "./comments.js";
 
 const HOST = "https://wedev-api.sky.pro";
-const API_KEY = "имя-фамилия"; // ← оставь свой ключ
+const API_KEY = "Кристина Кабисова";
 const API_URL = `${HOST}/api/v1/${API_KEY}/comments`;
 
 export function getComments() {
