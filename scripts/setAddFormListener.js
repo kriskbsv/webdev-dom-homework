@@ -19,6 +19,15 @@ export function setAddFormListener() {
         nameInput.value = "";
         textInput.value = "";
       })
+      .catch((error) => {
+        if (error.message === "Короткие данные") {
+          alert("Имя и комментарий должны быть не короче 3 символов");
+        } else if (error.message === "Ошибка сервера") {
+          alert("Сервер сломался, попробуй позже");
+        } else {
+          alert("Кажется, у вас сломался интернет, попробуйте позже");
+        }
+      })
       .finally(() => {
         addForm.style.display = "";
         addFormLoader.style.display = "none";
