@@ -1,11 +1,18 @@
+import { loadComments } from "./api.js";
 import { renderComments } from "./renderComments.js";
 import { setAddFormListener } from "./setAddFormListener.js";
-import { loadComments } from "./api.js";
 
-async function initApp() {
-  await loadComments();
-  renderComments();
-  setAddFormListener();
-}
+const commentsLoader = document.querySelector(".comments-loader");
 
-initApp();
+
+commentsLoader.style.display = "block";
+
+loadComments()
+  .then(() => {
+    renderComments();
+  })
+  .finally(() => {
+    commentsLoader.style.display = "none";
+  });
+
+setAddFormListener();
