@@ -1,12 +1,13 @@
+import { state } from "./state.js";
 import { loadComments } from "./api.js";
 import { renderComments } from "./renderComments.js";
-import { setAddFormListener } from "./setAddFormListener.js";
+import { renderFormArea } from "./renderFormArea.js";
 
 const commentsLoader = document.querySelector(".comments-loader");
 
 commentsLoader.style.display = "block";
 
-loadComments()
+loadComments(state.token)
   .then(() => {
     renderComments();
   })
@@ -19,6 +20,5 @@ loadComments()
   })
   .finally(() => {
     commentsLoader.style.display = "none";
+    renderFormArea(); 
   });
-
-setAddFormListener();
