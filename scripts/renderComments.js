@@ -5,6 +5,22 @@ import { setCommentListeners } from "./setCommentListeners.js";
 
 const commentsList = document.querySelector(".comments");
 
+function formatDate(isoString) {
+  const date = new Date(isoString);
+  return (
+    date.toLocaleDateString("ru-RU", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+    }) +
+    " " +
+    date.toLocaleTimeString("ru-RU", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+  );
+}
+
 export function renderComments() {
   const commentsHtml = comments
     .map((comment, index) => {
@@ -19,7 +35,7 @@ export function renderComments() {
         <li class="comment" data-index="${index}">
           <div class="comment-header">
             <div>${safeName}</div>
-            <div>${comment.date}</div>
+            <div>${formatDate(comment.date)}</div>
           </div>
           <div class="comment-body">
             <div class="comment-text">${safeText}</div>
