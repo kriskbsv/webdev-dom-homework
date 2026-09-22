@@ -7,30 +7,15 @@
   </head>
   <body>
     <div class="container">
-      <ul class="comments"></ul>
-      <div class="comments-loader" style="display: none;">
-        Комментарии загружаются...
+      <div class="comments-page">
+        <ul class="comments"></ul>
+        <div class="comments-loader" style="display: none;">
+          Комментарии загружаются...
+        </div>
+        <div class="form-area"></div>
       </div>
 
-      <div class="add-form">
-        <input
-          type="text"
-          class="add-form-name"
-          placeholder="Введите ваше имя"
-        />
-        <textarea
-          type="textarea"
-          class="add-form-text"
-          placeholder="Введите ваш коментарий"
-          rows="4"
-        ></textarea>
-        <div class="add-form-row">
-          <button class="add-form-button">Написать</button>
-        </div>
-      </div>
-      <div class="add-form-loader" style="display: none;">
-        Комментарий добавляется...
-      </div>
+      <div class="login-page" style="display: none;"></div>
     </div>
 
     <script type="module" src="./scripts/main.js"></script>
